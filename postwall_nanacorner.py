@@ -24,10 +24,12 @@ chrome_options.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.notifications": 2 # 1:allow, 2:block 
 })
 
-usr = "kevin.wirecard@gmail.com"
+# usr = "kevin.wirecard@gmail.com"
+# pwd = "1q2w3e4r5t6y7u8i"
+usr = "ducvietlaptopnhapkhau@gmail.com"
 pwd = "1q2w3e4r5t6y7u8i"
 
-driver = webdriver.Chrome(executable_path="C:\Projects\python\facebookpython/chromedriver")
+driver = webdriver.Chrome(executable_path="/Users/sonpham123/Project/python/autofacebook/chromedriver")
 driver.implicitly_wait(15) # seconds
 driver.get('https://www.facebook.com/login.php?login_attempt=1&lwv=110')
 print("Opened facebook...")
@@ -41,7 +43,7 @@ button = driver.find_element_by_xpath("//button[@id='loginbutton']")
 button.click()
 print("facebook opened")
 sleep(20)
-filepath = '/Users/macbook/Projects/python/autofacebook/nanacorner_product.txt'
+filepath = '/Users/sonpham123/Project/python/autofacebook/nanacorner_product.txt'
 with open(filepath) as fp:
    line = fp.readline()
    cnt = 1

@@ -24,10 +24,10 @@ chrome_options.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.notifications": 2 # 1:allow, 2:block 
 })
 
-usr = "kevin.wirecard@gmail.com"
+usr = "ducvietlaptopnhapkhau@gmail.com"
 pwd = "1q2w3e4r5t6y7u8i"
 
-driver = webdriver.Chrome(executable_path="C:\Projects\python\facebookpython/chromedriver")
+driver = webdriver.Chrome(executable_path="/Users/sonpham123/Project/python/autofacebook/chromedriver")
 driver.implicitly_wait(15) # seconds
 driver.get('https://www.facebook.com/login.php?login_attempt=1&lwv=110')
 print("Opened facebook...")
@@ -41,20 +41,23 @@ button = driver.find_element_by_xpath("//button[@id='loginbutton']")
 button.click()
 print("facebook opened")
 sleep(20)
-filepath = '/Users/macbook/Projects/python/autofacebook/nanacorner_product.txt'
+filepath = '/Users/sonpham123/Project/python/autofacebook/product.txt'
 with open(filepath) as fp:
    line = fp.readline()
    cnt = 1
    while line:
    	driver.refresh();
    	sleep(100) 
+   	print("Man hinh da load xong")
+   	print("Bat dau lay dong: ")
 	print("Line {}: {}".format(cnt, line.strip()))
 	sleep(100) 
 	status= driver.find_element_by_xpath("//textarea[@name='xhpc_message']")
-	status.send_keys( line.strip() +  ' #beauty #cosmetic #waxing #skincare #homedecor #canvas #art #bodyart #tatoo #love #healthcare #facecare #lipstick Get more best product what you want at here ');
+	status.send_keys( line.strip() +  ' #beauty #cosmetic #waxing #skincare #homedecor #canvas #art #bodyart #tatoo #love #healthcare #facecare #lipstick ');
 	sleep(135) 
-	print("Add Status trying")
+	print("Nhap noi dung thanh cong !")
 	sleep(15)
+	print("Click Post button!")
 	# postbutton = driver.find_element_by_xpath("//button[contains(.,'Post')]")
 	# postbutton.click()
 	post_it=driver.find_element_by_xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div/div[3]/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div[3]/div[2]/button")
